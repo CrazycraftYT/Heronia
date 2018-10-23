@@ -9,6 +9,13 @@ bot.on("ready", function() {
     console.log("Le bot a bien ete connecte");
 });
 
+if (message.content === (PREFIX) + "help"){
+    var help_embed = new Discord.RichEmbed();
+        .setColor('#0c04e8')
+        .addField("Commande Heronia BOT", "!ip > Pour afficher l'IP du serveur", "!site> Pour afficher le lien du site")
+    message.channel.sendEmbed(help_embed)
+}
+
 bot.on("message", async function(message) {
     if (message.author.equals(bot.user)) return;
 
@@ -17,15 +24,15 @@ bot.on("message", async function(message) {
     var args = message.content.substring(PREFIX.length).split(" ");
 
     switch(args[0].toLowerCase()) {
-        case "invite":
+        case "help":
         message.channel.send("", {
             embed: {
                 color: 0xFF0000,
                 author: message.author.name,
                 title: '',
                 fields: [{
-                    name: "Lien d'invitation discord",
-                    value: "https://discord.gg/29Ccx96",
+                    name: "Commande Heronia Discord",
+                    value: "https://discord.gg/29Ccx96 // "
                     inline: false
                 }],
                 footer: {
