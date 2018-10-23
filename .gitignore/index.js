@@ -30,7 +30,7 @@ bot.on('message', message => {
     if (message.content === prefix + "ip"){
         var embed = new Discord.RichEmbed()
             .setTitle("Voici l'IP du serveur :")
-            .setDescription(" ")
+            .setDescription(" -=- ")
             .addField("*mc.heronia.fr*", true)
             .addField("Si cela ne fonctionne pas, contactez un membre du Staff.")
             .setColor(0x0000FF)
@@ -41,7 +41,7 @@ bot.on('message', message => {
     if (message.content === prefix + "site"){
         var embed = new Discord.RichEmbed()
             .setTitle("Voici le forum du serveur :")
-            .setDescription(" ")
+            .setDescription(" -=- ")
             .addField("*heronia.fr*", true)
             .addField("Si cela ne fonctionne pas, contactez un membre du Staff.")
             .setColor(0x0000FF)
