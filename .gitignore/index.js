@@ -29,7 +29,7 @@ bot.on('message', message => {
 
     if (message.content === prefix + "ip"){
         var embed = new Discord.RichEmbed()
-            .setTitle("Voici l'IP du serveur :")
+            .setTitle("__Voici l'IP du serveur :__")
             .setDescription(" -=- ")
             .addField("*mc.heronia.fr*", " -=- ", true)
             .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", " -=- ", true)
@@ -40,9 +40,9 @@ bot.on('message', message => {
 
     if (message.content === prefix + "site"){
         var embed = new Discord.RichEmbed()
-            .setTitle("Voici le forum du serveur :")
+            .setTitle("__Voici le forum du serveur :__")
             .setDescription(" -=- ")
-            .addField("*heronia.fr*", " -=- ", true)
+            .addField("*http://heronia.fr/*", " -=- ", true)
             .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", " -=- ", true)
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
