@@ -22,7 +22,7 @@ bot.on('message', message => {
             .setDescription("**Liste des commandes du discord**")
             .addField("*» Serveur «*", "!ip » Permet d'afficher l'IP du serveur", true)
             .addField("*» Forum «*", "!site » Permet d'obtenir le lien du forum d'Heronia", true)
-            .setColor(0xFF8000)
+            .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
     }
