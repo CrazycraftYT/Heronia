@@ -24,7 +24,7 @@ bot.on("message", async function(message) {
             .setColor(0xFF8000)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
-    })
+    }
 });
 
 bot.login(process.env.TOKEN);
