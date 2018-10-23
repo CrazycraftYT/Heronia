@@ -25,7 +25,7 @@ bot.on("message", async function(message) {
                 title: '',
                 fields: [{
                     name: "Commande Heronia Discord",
-                    value: "https://discord.gg/29Ccx96"
+                    value: "https://discord.gg/29Ccx96",
                     inline: false
                 }],
                 footer: {
