@@ -18,8 +18,8 @@ bot.on('message', message => {
 
     if (message.content === prefix + "help"){
         var embed = new Discord.RichEmbed()
-            .setTitle("Heronia Commande Discord")
-            .setDescription("**Liste des commandes du discord**")
+            .setTitle("__Liste des commandes du discord__")
+            .setDescription(" ")
             .addField("*» Serveur «*", "!ip » Permet d'afficher l'IP du serveur", true)
             .addField("*» Forum «*", "!site » Permet d'obtenir le lien du forum d'Heronia", true)
             .setColor(0x0000FF)
@@ -29,9 +29,9 @@ bot.on('message', message => {
 
     if (message.content === prefix + "ip"){
         var embed = new Discord.RichEmbed()
-            .setTitle("Heronia Commande Discord")
-            .setDescription("**Voici l'IP du serveur**")
-            .addField("*» IP «*", "mc.heronia.fr", true)
+            .setTitle("Voici l'IP du serveur")
+            .setDescription(" ")
+            .addField("mc.heronia.fr", true)
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
