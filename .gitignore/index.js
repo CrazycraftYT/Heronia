@@ -32,7 +32,7 @@ bot.on('message', message => {
             .setTitle("__Voici l'IP du serveur :__")
             .setDescription(" -=- ")
             .addField("*mc.heronia.fr*", " -=- ", true)
-            .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", " -=- ", true)
+            .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", "   ", true)
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
