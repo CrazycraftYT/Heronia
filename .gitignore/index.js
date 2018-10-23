@@ -32,7 +32,7 @@ bot.on('message', message => {
             .setTitle("Voici l'IP du serveur :")
             .setDescription(" -=- ")
             .addField("*mc.heronia.fr*", true)
-            .addField("Si cela ne fonctionne pas, contactez un membre du Staff.")
+            .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", true)
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
@@ -43,7 +43,7 @@ bot.on('message', message => {
             .setTitle("Voici le forum du serveur :")
             .setDescription(" -=- ")
             .addField("*heronia.fr*", true)
-            .addField("Si cela ne fonctionne pas, contactez un membre du Staff.")
+            .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", true)
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
