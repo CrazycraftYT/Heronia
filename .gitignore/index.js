@@ -25,7 +25,9 @@ bot.on("message", async function(message) {
                 title: '',
                 fields: [{
                     name: "Commande Heronia Discord",
-                    value: "!ip » Permet d'afficher l'IP du serveur d'Heronia", "!site » Permet d'afficher le lien du site d'Heronia",
+                    value: "!ip » Permet d'afficher l'IP du serveur d'Heronia",
+                    value: "!site » Permet d'afficher le lien du site du serveur Heronia",
+                    value: "!twitter » Permet d'afficher le lien du twitter du serveur d'Heronia",
                     inline: false
                 }],
                 footer: {
