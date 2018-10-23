@@ -42,7 +42,7 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
             .setTitle("Voici le forum du serveur :")
             .setDescription(" ")
-            .addField("*[heronia.fr]*", true)
+            .addField("*heronia.fr*", true)
             .addField(" ", true)
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
