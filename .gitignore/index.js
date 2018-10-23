@@ -24,6 +24,7 @@ bot.on("message", async function(message) {
             .addField("Embed1", "Embed1")
             .setColor(0xFF8000)
             .setFooter("Bon moment")
+        message.channel.sendEmbed(embed);
         });
         break;
     }
