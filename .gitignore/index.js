@@ -21,7 +21,7 @@ bot.on('message', message => {
             .setTitle("__Liste des commandes du discord :__")
             .setDescription(" ")
             .addField("*» Serveur «*", "!ip » Permet d'afficher l'IP du serveur", true)
-            .addField("*» Forum «*", "!forum » Permet d'obtenir le lien du forum d'Heronia", true)
+            .addField("*» Forum «*", "!site » Permet d'obtenir le lien du forum d'Heronia", true)
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
@@ -31,17 +31,19 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
             .setTitle("Voici l'IP du serveur :")
             .setDescription(" ")
-            .addField("**mc.heronia.fr**")
+            .addField("*mc.heronia.fr*")
+            .addField(" ")
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
     }
 
-    if (message.content === prefix + "forum"){
+    if (message.content === prefix + "site"){
         var embed = new Discord.RichEmbed()
             .setTitle("Voici le forum du serveur :")
             .setDescription(" ")
-            .addField("**heronia.fr**")
+            .addField("*[heronia.fr]*")
+            .addField(" ")
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
