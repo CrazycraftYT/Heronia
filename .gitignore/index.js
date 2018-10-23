@@ -31,7 +31,7 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
             .setTitle("Voici l'IP du serveur :")
             .addField("*mc.heronia.fr*", true)
-            .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", true)
+            .addField("Si cela ne fonctionne pas, contactez un membre du Staff.")
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
@@ -41,7 +41,7 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
             .setTitle("Voici le forum du serveur :")
             .addField("*heronia.fr*", true)
-            .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", true)
+            .addField("Si cela ne fonctionne pas, contactez un membre du Staff.")
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
