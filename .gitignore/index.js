@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-var prefix = ("!")
+var prefix = ("!");
 
 var bot = new Discord.Client();
 
