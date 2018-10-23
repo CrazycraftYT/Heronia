@@ -9,7 +9,7 @@ bot.on("ready", function() {
     console.log("Le bot a bien ete connecte");
 });
 
-bot.on("message", async function(message) {
+bot.on('message', message => {
     if (message.author.equals(bot.user)) return;
 
     if(!message.content.startsWith(PREFIX)) return;
