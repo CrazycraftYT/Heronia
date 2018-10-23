@@ -19,8 +19,8 @@ bot.on("message", async function(message) {
     if (message.content === prefix + "help")
         var embed = new Discord.RichEmbed()
             .setTitle("Heronia Commande Discord")
-            .addField("Commande", "!ip » Permet d'afficher l'IP du serveur", "!site » Permet d'afficher le lien du site d'Heronia")
-            .addField("-", "-")
+            .addField("Commande", "!ip » Permet d'afficher l'IP du serveur",)
+            .addField("TT", "TT")
             .setColor(0xFF8000)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
