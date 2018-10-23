@@ -26,6 +26,17 @@ bot.on('message', message => {
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
     }
+
+    if (message.content === prefix + "ip"){
+        var embed = new Discord.RichEmbed()
+            .setTitle("Heronia Commande Discord")
+            .setDescription("**Voici l'IP du serveur**")
+            .addField("*» IP «*", "mc.heronia.fr", true)
+            .setColor(0x0000FF)
+            .setFooter("by Heronia » Crazy")
+        message.channel.sendEmbed(embed);
+    }
+
 });
 
 bot.login(process.env.TOKEN);
