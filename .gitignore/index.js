@@ -16,8 +16,7 @@ bot.on("message", async function(message) {
 
     var args = message.content.substring(PREFIX.length).split(" ");
 
-    switch(args[0].toLowerCase()) {
-        case "help":
+    if (message.content === prefix + "help")
         var embed = new Discord.RichEmbed()
             .setTitle("Heronia Commande Discord")
             .addField("Commande", "!ip » Permet d'afficher l'IP du serveur", "!site » Permet d'afficher le lien du site d'Heronia")
