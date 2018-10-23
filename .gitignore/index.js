@@ -25,8 +25,6 @@ bot.on("message", async function(message) {
             .setColor(0xFF8000)
             .setFooter("Bon moment")
         message.channel.sendEmbed(embed);
-        });
-        break;
     }
 });
 
