@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-var prefix = ("!");
+var prefix = "!";
 
 var bot = new Discord.Client();
 
@@ -12,9 +12,9 @@ bot.on("ready", function() {
 bot.on('message', message => {
     if (message.author.equals(bot.user)) return;
 
-    if(!message.content.startsWith(PREFIX)) return;
+    if(!message.content.startsWith(prefix)) return;
 
-    var args = message.content.substring(PREFIX.length).split(" ");
+    var args = message.content.substring(prefix.length).split(" ");
 
     if (message.content === prefix + "help"){
         var embed = new Discord.RichEmbed()
