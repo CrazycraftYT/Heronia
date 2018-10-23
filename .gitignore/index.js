@@ -16,7 +16,7 @@ bot.on("message", async function(message) {
 
     var args = message.content.substring(PREFIX.length).split(" ");
 
-    if (message.content === prefix + "help")
+    if (message.content === prefix + "help"){
         var embed = new Discord.RichEmbed()
             .setTitle("Heronia Commande Discord")
             .setDescription("AAA")
