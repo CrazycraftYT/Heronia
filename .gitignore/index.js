@@ -13,7 +13,7 @@ if (message.content === (PREFIX) + "help"){
     var help_embed = new Discord.RichEmbed();
         .setColor('#0c04e8')
         .addField("Commande Heronia BOT", "!ip > Pour afficher l'IP du serveur", "!site> Pour afficher le lien du site")
-    message.channel.sendEmbed(help_embed)
+    message.channel.sendEmbed(help_embed);
 }
 
 bot.on("message", async function(message) {
