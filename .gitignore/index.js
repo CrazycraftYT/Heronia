@@ -20,10 +20,10 @@ bot.on("message", async function(message) {
         case "help":
         var embed = new Discord.RichEmbed()
             .setTitle("Heronia Commande Discord")
-            .addField("!help", "Page d'aide")
-            .addField("Embed1", "Embed1")
+            .addField("Commande", "!ip » Permet d'afficher l'IP du serveur", "!site » Permet d'afficher le lien du site d'Heronia")
+            .addField("-", "-")
             .setColor(0xFF8000)
-            .setFooter("Bon moment")
+            .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
     }
 });
