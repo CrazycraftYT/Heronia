@@ -30,9 +30,9 @@ bot.on('message', message => {
     if (message.content === prefix + "ip"){
         var embed = new Discord.RichEmbed()
             .setTitle("Voici l'IP du serveur :")
-            .setDescription(" ", true)
+            .setDescription(" ")
             .addField("*mc.heronia.fr*", true)
-            .addField(" ")
+            .addField(" ", true)
             .setColor(0x0000FF)
             .setFooter("by Heronia » Crazy")
         message.channel.sendEmbed(embed);
