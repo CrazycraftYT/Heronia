@@ -5,7 +5,7 @@ var prefix = "!";
 var bot = new Discord.Client();
 
 bot.on("ready", function() {
-    bot.user.setGame("Heronia - !help");
+    bot.user.setGame("⌨️ [WIP] ⌨️");
     console.log("Le bot a bien ete connecte");
 });
 
