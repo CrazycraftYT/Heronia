@@ -23,7 +23,7 @@ bot.on('message', message => {
             .addField("*» Serveur «*", "!ip » Permet d'afficher l'IP du serveur", true)
             .addField("*» Forum «*", "!site » Permet d'obtenir le lien du forum d'Heronia", true)
             .setColor(0x0000FF)
-            .setFooter("by Heronia » Crazy")
+            .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
     }
 
@@ -34,7 +34,7 @@ bot.on('message', message => {
             .addField("*mc.heronia.fr*", " -=- ", true)
             .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", " -=-  ", true)
             .setColor(0x0000FF)
-            .setFooter("by Heronia » Crazy")
+            .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
     }
 
@@ -45,7 +45,7 @@ bot.on('message', message => {
             .addField("*http://heronia.fr/*", " -=- ", true)
             .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", " -=- ", true)
             .setColor(0x0000FF)
-            .setFooter("by Heronia » Crazy")
+            .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
     }
 
