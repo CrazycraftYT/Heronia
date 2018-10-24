@@ -6,7 +6,7 @@ var prefix = "!";
 var bot = new Discord.Client();
 
 bot.on("ready", function() {
-    bot.user.setGame("Heronia - !help");
+    bot.user.setGame("EN DEVELOPPEMENT");
     console.log("Le bot a bien ete connecte");
 });
 
@@ -61,7 +61,19 @@ bot.on('message', message => {
             .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
     }
- 
+
+    if (message.content === prefix + "rules"){
+        var embed = new Discord.RichEmbed()
+            .setTitle("__Voici les règles du serveur :__")
+            .setDescription(" -=- ")
+            .addField("__Infos :__", " Avant de commencer sachez que dès votre **première connexion** sur le serveur Heronia le staff considérera  que vous avez **pris conscience du règlement, que vous l'avez lu et approuvé.** Et que par conséquent vous vous engagez à le respecter quelque soit la situation. ", true)
+            .addField("1. Le cheat :", " Premièrement tout logiciel de triche est interdit sur Heronia et toutes personnes en utilisant un quelque soit le type de triche (Reach, Fly, Speedhack ...) sera  banni du serveur pour une durée de 14 jours. Nous tenons également à préciser que le staff a l'interdiction de vérifier le joueur.", true)
+            .addField("2. Les clicks :", "Deuxièmement nous tenons à indiquer pour tout les joueurs fans de butterflyclick, dragclick, jitterclick qu'il est interdit de dépasser 15 clicks par secondes ( ou CPS pour ceux qui préfèrent.) et si jamais à de multiples reprises des alertes montre que vous avez dépasser ce nombre de click par secondes un modérateur pourra vous bannir 14 jours.", true)
+            .addField("3. La publicitée :", "Nous tenons également à dire que Heronia n'est pas un annuaire pour les publicités par conséquent si il n'y ne sera qu'une seule publicité dans le chat du serveur pour un discord ou l'ip d'un autre serveur minecraft le joueur en question aura un bannissement d'une heure.", true)
+            .setColor(0x0000FF)
+            .setFooter("© Heronia 2018")
+        message.channel.sendEmbed(embed);
+    }
 
 });
 
