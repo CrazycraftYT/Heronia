@@ -80,9 +80,38 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed);
     }
 
-    bot.on("guildMemberAdd", member => {
-        member.guild.channels.find("name", "bienvenue").send(`:hamburger: ${member.user.username} vien de join le discord Heronia !`)  
-    })
+    if (command === "kick") {
+        let modRole = message.guild.roles.find("name", "Test");
+        if(!message.member.roles.has(modRole.id)) {
+            return message.reply("Tu n'as pas la permission").catch(console.error);
+        }
+        if(message.mentions.user.size === 0) {
+            return message.reply("Merci de mentionner le joueur !").catch(console.error);
+        }
+        let kickMember = message.guild.member(message.mentions.users.first());
+        id(!kickMember) {
+            return message.reply("Utilisateur introuvable / grade trop élevé !")
+        }
+        if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
+            return message.reply("J'ai besoin des permissions !").catch(console.error);
+        } 
+        kickMemer.kick().the,(member => {
+            message.reply(`${member.user.username} a été kick du serveur !`).catch(console.error);
+            message.guild.channels.find("name", "💬discussion").send(`**${member.user.username} a été kick du discord par **${message.author.username}**`)
+        }).catch(console.error)
+    }
+
+    if (command === "ban") {
+        let ModRole = message.guild.roles.find("name", "Test");
+        if(!message.member.roles.has(modRole.id))
+            return message.reply("Pas la permission").catch(console.error);
+        }
+        const member = message.mentions.members.first();
+        if (!member) return message.reply("Manque la mention !");
+        member.ban().then(member => {
+            message.reply(`${member.user.username} a été ban !`)
+            message.guild.channels.find("name", "Test").send(`${member.user.username} a été bannis par ${member.author.username} !`)
+        }).catch(console.error)
 
 });
 
