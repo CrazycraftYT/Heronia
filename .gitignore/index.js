@@ -1,4 +1,7 @@
 const Discord = require("discord.js");
+const fs = require("fs");
+const bot = new Discord.Client({disableEveryone: true});
+bot.mutes = require("./mutes.json");
 
 var prefix = "!";
 
@@ -22,6 +25,7 @@ bot.on('message', message => {
             .setDescription(" ")
             .addField("*» Serveur «*", "!ip » Permet d'afficher l'IP du serveur", true)
             .addField("*» Forum «*", "!site » Permet d'obtenir le lien du forum d'Heronia", true)
+            .addField("» *Twitter* «", "!twitter » Permet d'obtenir le lien du twitter d'Heronia", true)
             .setColor(0x0000FF)
             .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
@@ -48,6 +52,19 @@ bot.on('message', message => {
             .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
     }
+
+    if (message.content === prefix + "twitter"){
+        var embed = new Discord.RichEmbed()
+            .setTitle("__Voici le twitter du serveur :__")
+            .setDescription(" -=- ")
+            .addField("*https://twitter.com/HeroniaFR*", " -=- ", true)
+            .addField("Si cela ne fonctionne pas, contactez un Administrateur.", " -=- ", true)
+            .setColor(0x0000FF)
+            .setFooter("© Heronia 2018")
+        message.channel.sendEmbed(embed);
+    }
+
+    
 
 });
 
