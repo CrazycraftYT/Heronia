@@ -6,7 +6,7 @@ var prefix = "!";
 var bot = new Discord.Client();
 
 bot.on("ready", function() {
-    bot.user.setGame("📀 Heronia | !help");
+    bot.user.setGame("Maintenance en cours - Crazy");
     console.log("Le bot a bien ete connecte");
 });
 
@@ -24,6 +24,7 @@ bot.on('message', message => {
             .addField("*» Serveur «*", "!ip » Permet d'afficher l'IP du serveur", true)
             .addField("*» Forum «*", "!site » Permet d'obtenir le lien du forum d'Heronia", true)
             .addField("*» Twitter «*", "!twitter » Permet d'obtenir le lien du twitter d'Heronia", true)
+            .addField("*» Mode de jeux «*:", "!mdj » Permet d'afficher les modes de jeux présent sur Heronia", true)
             .setColor(0x0000FF)
             .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
@@ -75,6 +76,19 @@ bot.on('message', message => {
             .addField("6. Propos :", "Tout ce qui est des __propos racistes, homophobes et antisémites__ sont totalement interdits et seront sanctionnable  **d'un mute de 12 heures.**", true)
             .addField("7. Spam / Flood :", "__Le spam et le flood__ sont aussi interdits et sont sanctionnable d'un kick et en cas de récidive d'un **mute de 10 minutes** quelque en soit la raison.", true)
             .addField("8. Use-Bug :", "Nous vous informons également que tout __use-bug__ est interdit et est sanctionnable **d'un kick**, mais il serait préférable de parler du bug en question pour que l'équipe **d'administration le règle**.", true)
+            .setColor(0x0000FF)
+            .setFooter("© Heronia 2018")
+        message.channel.sendEmbed(embed);
+    }
+
+    if (message.content === prefix + "mdj"){
+        var embed = new Discord.RichEmbed()
+            .setTitle("__Voici les modes de jeux du serveur :__")
+            .setDescription(" -=- ")
+            .addField("*RushFFA*", " Rush en mode FFA. ", true)
+            .addField("*RTF*", " En équipe, vous devez capturer le drapeau ennemis.  ", true)
+            .addField("*PvP-Box*", "En solo, vous devez vaincre vos ennemis avec différents kits.", true)
+            .addField("*Practice*", "Mode de jeu de duel en PvP, vaincre votre ennemi est votre objectif.", true)
             .setColor(0x0000FF)
             .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
