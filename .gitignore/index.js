@@ -23,6 +23,7 @@ bot.on('message', message => {
             .setDescription(" ")
             .addField("*» Serveur «*", "!ip » Permet d'afficher l'IP du serveur", true)
             .addField("*» Forum «*", "!site » Permet d'obtenir le lien du forum d'Heronia", true)
+            .addField("*» Twitter «*", "!twitter » Permet d'obtenir le lien du twitter d'Heronia", true)
             .setColor(0x0000FF)
             .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
@@ -54,7 +55,7 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
             .setTitle("__Voici le forum du serveur :__")
             .setDescription(" -=- ")
-            .addField("*http://heronia.fr/*", " -=- ", true)
+            .addField("*https://twitter.com/HeroniaFR*", " -=- ", true)
             .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", " -=- ", true)
             .setColor(0x0000FF)
             .setFooter("© Heronia 2018")
