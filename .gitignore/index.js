@@ -109,8 +109,8 @@ bot.on('message', message => {
         const member = message.mentions.members.first();
         if (!member) return message.reply("Manque la mention !");
         member.ban().then(member => {
-            message.reply(`${member.user.username} a été ban !`)
-            message.guild.channels.find("name", "Test").send(`${member.user.username} a été bannis par ${member.author.username} !`)
+            message.reply(`${member.user.username} a été ban !`);
+            message.guild.channels.find("name", "Test").send(`${member.user.username} a été bannis par ${member.author.username} !`);
         }).catch(console.error)
 
 });
