@@ -6,7 +6,7 @@ var prefix = "!";
 var bot = new Discord.Client();
 
 bot.on("ready", function() {
-    bot.user.setGame("Maintenance en cours - Crazy");
+    bot.user.setGame("📀 Heronia | !help");
     console.log("Le bot a bien ete connecte");
 });
 
@@ -79,18 +79,6 @@ bot.on('message', message => {
             .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
     }
-
-    if (command === "ban") {
-        let ModRole = message.guild.roles.find("name", "Ez");
-        if(!message.member.roles.has(modRole.id))
-            return message.reply("Pas la permission").catch(console.error);
-        }
-        const member = message.mentions.members.first();
-        if (!member) return message.reply("Manque la mention !");
-        member.ban().then(member => {
-            message.reply(`${member.user.username} a été ban !`);
-            message.guild.channels.find("name", "Test").send(`${member.user.username} a été bannis par ${member.author.username} !`);
-        }).catch(console.error)
 
 });
 
