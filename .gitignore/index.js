@@ -63,30 +63,6 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed);
     }
     
-    exports.run = async(client, message, args) => {
- 
-        if  (!message.member.hasPermissions(["KICK_MEMBERS"])) return message.reply("Vous n'avez pas les permissions !");
-        let reason = args.slice(1).join(' ');
-        let user = message.mentions.users.first();
-        if (reason.length < 1) return message.reply('Vous devez entrer une raison valide !');
-        if (message.mentions.users.size < 1) return message.reply('Vous devez séléctionner la personne !').catch(console.error);
-     
-        if (!message.guild.member(user).kickable) return message.reply("Vous ne pouvez pas kick cette personne !");
-        let member = await message.guild.member(user).kick()
-     
-        const Discord = require("discord.js");
-        const embed = new Discord.RichEmbed()
-            .setColor('#FF0000')
-            .setTimestamp()
-            .addField('Action:', '__***Kick***__')
-            .addField('Joueur:', `${user.username}`)
-            .addField('Staff:', `${message.author.username}`)
-            .addField('Raison', reason)
-            .setFooter('© Heronia 2018')
-        return message.channel.sendEmbed(embed).catch(console.error);
-       
-    };
-    
 
 });
 
