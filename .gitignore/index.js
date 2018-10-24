@@ -84,7 +84,7 @@ bot.on('message', message => {
     if (message.content === prefix + "mdj"){
         var embed = new Discord.RichEmbed()
             .setTitle("__Voici les modes de jeux du serveur :__")
-            .setDescription(" -=- ")
+            .setDescription("Ce guide est fait pour vous indiquer le but des modes de jeux")
             .addField("*RushFFA*", " Rush en mode FFA. ", true)
             .addField("*RTF*", " En équipe, vous devez capturer le drapeau ennemis.  ", true)
             .addField("*PvP-Box*", "En solo, vous devez vaincre vos ennemis avec différents kits.", true)
