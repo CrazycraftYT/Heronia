@@ -64,13 +64,13 @@ bot.on('message', message => {
 
     exports.run = async(client, message, args) => {
  
-        if  (!message.member.hasPermissions(["KICK_MEMBERS"])) return message.reply("You don't have the appropriate rights to run this command!");
+        if  (!message.member.hasPermissions(["KICK_MEMBERS"])) return message.reply("Vous n'avez pas la permission !");
         let reason = args.slice(1).join(' ');
         let user = message.mentions.users.first();
-        if (reason.length < 1) return message.reply('You must specify a reason for the kick!');
-        if (message.mentions.users.size < 1) return message.reply('You must select the user you want to kick!').catch(console.error);
+        if (reason.length < 1) return message.reply('Merci de mettre une raison !');
+        if (message.mentions.users.size < 1) return message.reply('Merci de séléctionner le joueur à sanctionner !').catch(console.error);
      
-        if (!message.guild.member(user).kickable) return message.reply("I can't kick this user!");
+        if (!message.guild.member(user).kickable) return message.reply("Je ne peut pas kick cette personne !");
         let member = await message.guild.member(user).kick()
      
         const Discord = require("discord.js");
@@ -78,10 +78,10 @@ bot.on('message', message => {
             .setColor('#FF0000')
             .setTimestamp()
             .addField('Action:', '__***Kick***__')
-            .addField('User:', `${user.username}`)
+            .addField('Joueur:', `${user.username}`)
             .addField('Staff:', `${message.author.username}`)
-            .addField('Reason', reason)
-            .setFooter('A Official DynatriSoft bot')
+            .addField('Raison', reason)
+            .setFooter('© Heronia 2018')
         return message.channel.sendEmbed(embed).catch(console.error);
        
     };
