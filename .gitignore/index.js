@@ -81,7 +81,7 @@ bot.on('message', message => {
     }
 
     bot.on("guildmemberAdd", member => {
-        member.guild.channels.find("name, bienvenue").send(`:hamburger: ${member.user.username} vien de join le discord Heronia !`)  
+        member.guild.channels.find("name", "bienvenue").send(`:hamburger: ${member.user.username} vien de join le discord Heronia !`)  
     })
 
 });
