@@ -53,17 +53,6 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed);
     }
 
-    if (message.content === prefix + "twitter"){
-        var embed = new Discord.RichEmbed()
-            .setTitle("__Voici le twitter du serveur :__")
-            .setDescription(" -=- ")
-            .addField("*https://twitter.com/HeroniaFR*", " -=- ", true)
-            .addField("Si cela ne fonctionne pas, contactez un Administrateur.", " -=- ", true)
-            .setColor(0x0000FF)
-            .setFooter("© Heronia 2018")
-        message.channel.sendEmbed(embed);
-    }
-    
 
 });
 
