@@ -61,21 +61,7 @@ bot.on('message', message => {
             .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
     }
-
-    const antispam = require("discord-anti-spam");
  
-antispam(bot, {
-  warnBuffer: 3, //Maximum amount of messages allowed to send in the interval time before getting warned.
-  maxBuffer: 5, // Maximum amount of messages allowed to send in the interval time before getting banned.
-  interval: 1000, // Amount of time in ms users can send a maximum of the maxBuffer variable before getting banned.
-  warningMessage: "Merci d'arreter de spam !", // Warning message send to the user indicating they are going to fast.
-  banMessage: "a été ban pour spam !", // Ban message, always tags the banned user in front of it.
-  maxDuplicatesWarning: 7,// Maximum amount of duplicate messages a user can send in a timespan before getting warned
-  maxDuplicatesBan: 10, // Maximum amount of duplicate messages a user can send in a timespan before getting banned
-  deleteMessagesAfterBanForPastDays: 7 // Delete the spammed messages after banning for the past x days.
-  exemptRoles: ["Admin", "Friend"] // The names of the roles which should not be spam-filtered
-  exemptUsers: ["user#1234"] // The Discord tags of the users who should not be spam-filtered
-});
 
 });
 
