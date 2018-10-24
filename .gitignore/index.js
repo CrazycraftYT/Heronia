@@ -80,6 +80,10 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed);
     }
 
+    bot.on("guildmemberAdd", member => {
+        member.guild.channels.find("name, 👋bienvenue-aurevoir").send(`:hamburger ${member.user.username} vien de join le discord Heronia !`)  
+    })
+
 });
 
 bot.login(process.env.TOKEN);
