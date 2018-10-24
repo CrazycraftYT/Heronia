@@ -62,29 +62,54 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed);
     }
 
-    exports.run = async(client, message, args) => {
- 
-        if  (!message.member.hasPermissions(["KICK_MEMBERS"])) return message.reply("Vous n'avez pas la permission !");
-        let reason = args.slice(1).join(' ');
-        let user = message.mentions.users.first();
-        if (reason.length < 1) return message.reply('Merci de mettre une raison !');
-        if (message.mentions.users.size < 1) return message.reply('Merci de séléctionner le joueur à sanctionner !').catch(console.error);
-     
-        if (!message.guild.member(user).kickable) return message.reply("Je ne peut pas kick cette personne !");
-        let member = await message.guild.member(user).kick()
-     
-        const Discord = require("discord.js");
-        const embed = new Discord.RichEmbed()
-            .setColor('#FF0000')
-            .setTimestamp()
-            .addField('Action:', '__***Kick***__')
-            .addField('Joueur:', `${user.username}`)
-            .addField('Staff:', `${message.author.username}`)
-            .addField('Raison', reason)
-            .setFooter('© Heronia 2018')
-        return message.channel.sendEmbed(embed).catch(console.error);
-       
-    };
+    const Discord = require('discord.js')
+const Bot = new Discord.Client()
+
+var token_login = "Le token se situe dans la page developpeurs, cliquez sur "click to reveal" et copiez-collez le ici !"
+var prefix = ":"
+
+Bot.on('ready', () => {
+
+console.log("Bot prêt");
+});
+
+Bot.on("message", async message => {
+
+  if(command === prefix + "mute"){
+
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas les droits pour muter un utilisateur !");
+
+    let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+    if(!toMute) return message.channel.send("Merci d'entrer un utilisateur !");
+    let role = message.guild.roles.find(r => r.name === "Utilisateurs mutés");
+    if(!role){
+      try {
+        role = await message.guild.createRole({
+          name: "Utilisateurs mutés",
+          color:"#000000",
+          permissions:[]
+        });
+
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(role, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        });
+      } catch (e) {
+        console.log(e.stack)
+      }
+    }
+
+    if(toMute.roles.has(role.id)) return message.channel.send('Cet utilisateur est déjà muté !');
+
+    await(toMute.addRole(role));
+    message.channel.send("Je l'ai muté !");
+
+    return;
+  }
+
+});
     
 
 });
