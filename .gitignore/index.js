@@ -81,7 +81,7 @@ bot.on('message', message => {
     }
 
     bot.on("guildMemberAdd", member => {
-        member.guild.channels.find("name", "bienvenue").send(` :arrow_right: ** ${member.user.username} ** est arrivé sur le discord d'Heronia ! :heronia: `)  
+        member.guild.channels.find("name", "bienvenue").send(`:hamburger: ${member.user.username} vien de join le discord Heronia !`)  
     })
 
 });
