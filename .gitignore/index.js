@@ -81,7 +81,7 @@ bot.on('message', message => {
     }
 
     if (command === "ban") {
-        let ModRole = message.guild.roles.find("name", "Test");
+        let ModRole = message.guild.roles.find("name", "Ez");
         if(!message.member.roles.has(modRole.id))
             return message.reply("Pas la permission").catch(console.error);
         }
