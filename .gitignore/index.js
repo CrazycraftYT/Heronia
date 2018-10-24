@@ -53,7 +53,7 @@ bot.on('message', message => {
 
     if (message.content === prefix + "twitter"){
         var embed = new Discord.RichEmbed()
-            .setTitle("__Voici le forum du serveur :__")
+            .setTitle("__Voici le twitter du serveur :__")
             .setDescription(" -=- ")
             .addField("*https://twitter.com/HeroniaFR*", " -=- ", true)
             .addField("Si cela ne fonctionne pas, contactez un membre du Staff.", " -=- ", true)
