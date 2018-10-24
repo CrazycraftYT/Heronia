@@ -25,7 +25,6 @@ bot.on('message', message => {
             .setDescription(" ")
             .addField("*» Serveur «*", "!ip » Permet d'afficher l'IP du serveur", true)
             .addField("*» Forum «*", "!site » Permet d'obtenir le lien du forum d'Heronia", true)
-            .addField("*TEST*", true)
             .setColor(0x0000FF)
             .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
