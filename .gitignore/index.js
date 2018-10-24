@@ -6,7 +6,7 @@ var prefix = "!";
 var bot = new Discord.Client();
 
 bot.on("ready", function() {
-    bot.user.setGame("EN DEVELOPPEMENT");
+    bot.user.setGame("Heronia - !help");
     console.log("Le bot a bien ete connecte");
 });
 
@@ -70,6 +70,11 @@ bot.on('message', message => {
             .addField("1. Le cheat :", " Premièrement tout logiciel de triche est interdit sur Heronia et toutes personnes en utilisant un quelque soit le type de triche (Reach, Fly, Speedhack ...) sera  banni du serveur pour une durée de 14 jours. Nous tenons également à préciser que le staff a l'interdiction de vérifier le joueur.", true)
             .addField("2. Les clicks :", "Deuxièmement nous tenons à indiquer pour tout les joueurs fans de butterflyclick, dragclick, jitterclick qu'il est interdit de dépasser 15 clicks par secondes ( ou CPS pour ceux qui préfèrent.) et si jamais à de multiples reprises des alertes montre que vous avez dépasser ce nombre de click par secondes un modérateur pourra vous bannir 14 jours.", true)
             .addField("3. La publicitée :", "Nous tenons également à dire que Heronia n'est pas un annuaire pour les publicités par conséquent si il n'y ne sera qu'une seule publicité dans le chat du serveur pour un discord ou l'ip d'un autre serveur minecraft le joueur en question aura un bannissement d'une heure.", true)
+            .addField("4. Les insultes / Style de jeu", "Ensuite avec les sanctions qui valent un bannissement sachez que Heronia n'est pas un défouloir à nerfs et que par conséquent les insultes graves seront sanctionnées d'un bannissement d'une heure.  Le style de jeu est aussi sanctionnable c'est pourquoi l'anti-jeu comme le spawnkill, les towers et les alliances seront sanctionnées d'abord d'un kick puis en cas de récidive d'un bannissement de 10 minutes.", true)
+            .addField("5. Les provocations", "Ensuite avec les sanctions qui valent un bannissement sachez que Heronia n'est pas un défouloir à nerfs et que par conséquent les insultes graves seront sanctionnées d'un bannissement d'une heure.  Le style de jeu est aussi sanctionnable c'est pourquoi l'anti-jeu comme le spawnkill, les towers et les alliances seront sanctionnées d'abord d'un kick puis en cas de récidive d'un bannissement de 10 minutes.", true)
+            .addField("6. Propos :", "Tout ce qui est des propos racistes, homophobes et antisémites sont totalement interdits et seront sanctionnable  d'un mute de 12 heures.", true)
+            .addField("7. Spam / Flood", "Le spam et le flood sont aussi interdits et sont sanctionnable d'un kick et en cas de récidive d'un mute de 10 minutes quelque en soit la raison.", true)
+            .addField("8. Use-Bug", "Nous vous informons également que tout use-bug est interdit et est sanctionnable d'un kick, mais il serait préférable de parler du bug en question pour que l'équipe d'administration le règle.", true)
             .setColor(0x0000FF)
             .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
