@@ -90,14 +90,14 @@ bot.on('message', message => {
         }
         let kickMember = message.guild.member(message.mentions.users.first());
         id(!kickMember) {
-            return message.reply("Utilisateur introuvable / grade trop élevé !")
+            return message.reply("Utilisateur introuvable / grade trop élevé !");
         }
         if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
             return message.reply("J'ai besoin des permissions !").catch(console.error);
         } 
         kickMemer.kick().the,(member => {
             message.reply(`${member.user.username} a été kick du serveur !`).catch(console.error);
-            message.guild.channels.find("name", "💬discussion").send(`**${member.user.username} a été kick du discord par **${message.author.username}**`)
+            message.guild.channels.find("name", "💬discussion").send(`**${member.user.username} a été kick du discord par **${message.author.username}**`);
         }).catch(console.error)
     }
 
