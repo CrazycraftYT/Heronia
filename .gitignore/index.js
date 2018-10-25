@@ -94,12 +94,6 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed);
     }
 
-    private void onGuildMemberJoin(GuildMemberJoinEvent event){
-		event.getGuild().getPublicChannel().sendMessage(event.getUser().getAsMention()+" a rejoint Heronia !").queue();
-	}
-	
-	private void onGuildMemberLeave(GuildMemberLeaveEvent event){
-		event.getGuild().getPublicChannel().sendMessage(event.getUser().getAsMention()+" a quitté Heronia").queue();
 
 });
 
