@@ -6,7 +6,7 @@ var prefix = "!";
 var bot = new Discord.Client();
 
 bot.on("ready", function() {
-    bot.user.setGame("Heronia | !help");
+    bot.user.setGame("Maintenance en cours - Crazy");
     console.log("Le bot a bien ete connecte");
 });
 
@@ -93,6 +93,13 @@ bot.on('message', message => {
             .setFooter("© Heronia 2018")
         message.channel.sendEmbed(embed);
     }
+
+    private void onGuildMemberJoin(GuildMemberJoinEvent event){
+		event.getGuild().getPublicChannel().sendMessage(event.getUser().getAsMention()+" a rejoint Heronia !").queue();
+	}
+	
+	private void onGuildMemberLeave(GuildMemberLeaveEvent event){
+		event.getGuild().getPublicChannel().sendMessage(event.getUser().getAsMention()+" a quitté Heronia").queue();
 
 });
 
