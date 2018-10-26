@@ -94,46 +94,49 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed);
     }
 
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
- 
-const adapters = new FileSync('database.json');
-const db = low(adapters);
- 
-db.defaults({ histoires : [], xp: []}).write()
+    const botconfig = require("./botconfig.json");
+const tokenfile = require("./token.json");
+const Discord = require("discord.js");
+const fs = require("fs");
+const bot = new Discord.Client({disableEveryone: true});
+bot.commands = new Discord.Collection();
 
- 
-bot.on('message', message => {
-   
-    var msgauthor = message.author.id
- 
-    if(message.author.bot)return;
- 
-    if(!db.get("xp").find({user : msgauthor}).value()){
-        db.get("xp").push({user : msgauthor, xp: 1}).write();
-    }else{
-        var userxpdb = db.get("xp").filter({user : msgauthor}).find("xp").value();
-        console.log(userxpdb)
-        var userxp = Object.values(userxpdb)
-        console.log(userxp)
-        console.log(`Nombre d'xp: ${userxp[1]}`)
- 
-        db.get("xp").find({user: msgauthor}).assign({user: msgauthor, xp: userxp[1] += 1}).write();
- 
-        if(message.content === prefix + "xp"){
-            var xp = db.get("xp").filter({user: msgauthor}).find('xp').value()
-            var xpfinal = Object.values(xp);
-            var xp_embed = new Discord.RichEmbed()
-                .setTitle(`Stat des XP de : ${message.author.username}`)
-                .setColor('#F4D03F')
-                .addField("XP", `${xpfinal[1]} xp`)
-                .setFooter("Enjoy :p")
-            message.channel.send({embed : xp_embed})
-        }
-    }
-})
+fs.readdir("./commands/", (err, files) => {
 
+  if(err) console.log(err);
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
+
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+    bot.commands.set(props.help.name, props);
+  });
+});
+
+bot.on("ready", async () => {
+  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+  bot.user.setActivity("tutorials on TSC", {type: "WATCHING"});
 
 });
+
+bot.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+
+  let prefix = botconfig.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+  let commandfile = bot.commands.get(cmd.slice(prefix.length));
+  if(commandfile) commandfile.run(bot,message,args);
+
+});
+
+})
+
 
 bot.login(process.env.TOKEN);
