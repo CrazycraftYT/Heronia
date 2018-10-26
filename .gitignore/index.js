@@ -6,7 +6,7 @@ var prefix = "!";
 var bot = new Discord.Client();
 
 bot.on("ready", function() {
-    bot.user.setGame("Maintenance en cours - Crazy");
+    bot.user.setGame("🕹Heronia | !help");
     console.log("Le bot a bien ete connecte");
 });
 
