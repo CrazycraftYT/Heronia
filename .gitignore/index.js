@@ -5,8 +5,8 @@ var prefix = "!";
 
 var bot = new Discord.Client();
 
-client.on("ready", () => {
-    client.user.setGame("Ce FDP de Crazy est", "https://www.twitch.tv/crazycraft555")
+bot.on("ready", () => {
+    bot.user.setGame("CrazycraftYT", "https://www.twitch.tv/crazycraft555")
 });
 
 bot.on('message', message => {
