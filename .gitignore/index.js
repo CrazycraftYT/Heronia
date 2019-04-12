@@ -6,7 +6,7 @@ var prefix = "!";
 var bot = new Discord.Client();
 
 bot.on("ready", () => {
-    bot.user.setGame("Heronia, c'est terminé ! Merci à vous !", "https://www.twitch.tv/crazycraft555")
+    bot.user.setGame("Heronia, c'est terminé ! Merci à vous !", "https://www.twitch.tv/maxwgamer")
 });
 
 bot.on('message', message => {
